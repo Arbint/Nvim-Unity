@@ -1,0 +1,21 @@
+# Ignore plugin data and cache
+lazy-lock.json
+.lazy/
+.cache/
+.local/
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# Ignore logs
+*.log
+
+# Ignore spell files
+*.add.spl
