@@ -30,19 +30,15 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.confirm({ select = true })
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-          ["<CR>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.abort()
-            end
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<S-CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          }),
+          ["<C-CR>"] = function(fallback)
+            cmp.abort()
             fallback()
-          end, { "i", "s" }),
+          end,
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
