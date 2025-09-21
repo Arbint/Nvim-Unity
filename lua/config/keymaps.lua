@@ -75,3 +75,13 @@ map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
 map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Neo-tree" })
+
+-- LSP keybindings
+map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+map("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
+map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+map("n", "gt", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
+map("n", "K", vim.lsp.buf.hover, { desc = "Show hover documentation" })
+map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+map("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format buffer" })
